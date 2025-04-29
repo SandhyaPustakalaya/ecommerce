@@ -1,66 +1,65 @@
-# Byte-compiled / optimized / DLL files
+# Python
+*.pyc
+*.pyo
+*.pyd
 __pycache__/
-*.py[cod]
-*$py.class
+*.sqlite3
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-
-# Django stuff:
+# Django
 *.log
-local_settings.py
+*.pot
+*.pyc
+*.mo
+*.swp
+*.db
 db.sqlite3
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+.idea/
+
+# Environment variables
+.env
+
+# VS Code settings
+.vscode/
+
+# Django static/media folders
+static/
 media/
 staticfiles/
 
-# VS Code
-.vscode/
+# Mac system files
+.DS_Store
 
-# Environment
-.env
-.venv
-env/
-venv/
-ENV/
+# Compiled source #
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
 
-# Git
-.git/
+# Node.js (if used for frontend build)
+node_modules/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Coverage reports
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+
+# Pytest
+.pytest_cache/
+
+# Render / deployment configs (optional if you want to keep them)
+*.render-build/
