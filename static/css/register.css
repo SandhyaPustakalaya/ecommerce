@@ -1,0 +1,79 @@
+body {
+    background: linear-gradient(135deg, #f1f8e9, #aed581);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .auth-container {
+    background-color: #ffffff;
+    padding: 2.2rem 2.7rem;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    max-width: 420px;
+  }
+  
+  .auth-container h2 {
+    text-align: center;
+    margin-bottom: 1.6rem;
+    color: #33691e;
+  }
+  
+  .input-group {
+    margin-bottom: 1.1rem;
+  }
+  
+  .input-group label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #333;
+    font-weight: 600;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #aed581;
+    border-radius: 8px;
+    transition: 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: #7cb342;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(124, 179, 66, 0.25);
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 11px;
+    background-color: #33691e;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #558b2f;
+  }
+  
+  .link {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .link a {
+    color: #33691e;
+    text-decoration: none;
+  }
+  
+  .link a:hover {
+    text-decoration: underline;
+  }

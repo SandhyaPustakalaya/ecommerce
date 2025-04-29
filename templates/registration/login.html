@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Sandhya Pustakalaya</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="auth-container">
+    <form method="POST" action="{% url 'login' %}">
+      {% csrf_token %}
+      <h2>Login to Your Account</h2>
+
+      {% if messages %}
+        {% for message in messages %}
+          <p class="message {{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+      </div>
+
+      <button type="submit" class="btn">Login</button>
+      <p class="link">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    </form>
+  </div>
+</body>
+</html>

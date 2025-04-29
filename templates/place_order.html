@@ -1,0 +1,35 @@
+<!-- templates/place_order.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Place Your Order</title>
+    <link rel="stylesheet" href="{% static 'css/place_order.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>🛍️ Confirm Your Order</h2>
+        
+        <form method="POST">
+            {% csrf_token %}
+            <label for="address">Shipping Address:</label>
+            <textarea name="address" required></textarea>
+
+            <label for="phone">Contact Number:</label>
+            <input type="text" name="phone" required>
+
+            <div class="order-summary">
+                <h4>Order Summary</h4>
+                <ul>
+                    {% for item in cart_items %}
+                        <li>{{ item.product.title }} (x{{ item.quantity }}) - ₹{{ item.product.price }}</li>
+                    {% endfor %}
+                </ul>
+                <strong>Total: ₹{{ total_price }}</strong>
+            </div>
+
+            <button type="submit">✅ Place Order</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart - Sandhya Pustakalaya</title>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Shopping Cart</h1>
+        {% if cart_items %}
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Book</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                        <tr>
+                            <td>{{ item.product.title }}</td>
+                            <td>₹{{ item.product.price }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>₹{{ item.product.price|floatformat:2|add:item.quantity|floatformat:2 }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="cart-total">
+                <strong>Total: ₹{{ total_price }}</strong>
+            </div>
+        {% else %}
+            <p>Your cart is empty.</p>
+        {% endif %}
+        <a href="{% url 'home' %}" class="btn">← Continue Shopping</a>
+    </div>
+</body>
+</html>

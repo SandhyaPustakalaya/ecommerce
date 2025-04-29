@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track Order - Sandhya Pustakalaya</title>
+    <link rel="stylesheet" href="{% static 'css/track_order.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>📦 Track Your Order</h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="order_id" placeholder="Enter Order ID" required>
+            <input type="text" name="phone" placeholder="Enter Phone Number" required>
+            <button type="submit">🔍 Track</button>
+        </form>
+
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <p class="error">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if order %}
+        <div class="result">
+            <h3>📝 Order Details</h3>
+            <p><strong>Order ID:</strong> #{{ order.id }}</p>
+            <p><strong>Status:</strong> 
+                <span class="badge {{ order.status|lower }}">{{ order.status }}</span>
+            </p>
+            <p><strong>Product:</strong> {{ order.product.title }}</p>
+            <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+            <p><strong>Ordered On:</strong> {{ order.ordered_at|date:"d M Y, h:i A" }}</p>
+            <p><strong>Delivery Address:</strong> {{ order.address }}</p>
+        </div>
+        {% endif %}
+        
+        <a href="{% url 'home' %}" class="back-btn">← Back to Home</a>
+    </div>
+</body>
+</html>

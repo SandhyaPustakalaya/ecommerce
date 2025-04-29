@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+</head>
+<body>
+<div class="checkout-container">
+    <h2>Checkout 🧾</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="address-form">
+            <label>Full Name:</label>
+            <input type="text" name="fullname" required>
+
+            <label>Address:</label>
+            <textarea name="address" required></textarea>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phone" required>
+        </div>
+
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <ul>
+                {% for item in cart_items %}
+                    <li>{{ item.product.title }} x{{ item.quantity }} - ₹{{ item.product.price|floatformat:2 }}</li>
+                {% endfor %}
+            </ul>
+            <p class="total">Total: ₹{{ total_price }}</p>
+        </div>
+
+        <button type="submit" class="btn">Place Order (COD)</button>
+    </form>
+</div>
+</body>
+</html>

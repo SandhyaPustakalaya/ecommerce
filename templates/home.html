@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandhya Pustakalaya</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <img src="{% static 'images/logo.png' %}" alt="Logo">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="container">
+            <p>Free shipping on all orders over ₹499 | Use code <strong>BOOKLOVE10</strong> for 10% off</p>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html">
+                        <h1>Sandhya<span>Pustakalaya</span></h1>
+                        <p>Est. 2015</p>
+                    </a>
+                </div>
+                
+                <div class="search-bar">
+                    <form id="searchForm">
+                        <input type="text" placeholder="Search for books, authors, genres..." id="searchInput">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                
+                <div class="user-actions">
+                    <a href="#" class="account-link"><i class="far fa-user"></i> Account</a>
+                    <a href="#" class="wishlist-link"><i class="far fa-heart"></i> Wishlist</a>
+                    <a href="#" class="cart-link" id="cartButton">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">ICSE</a></li>
+                    <li><a href="#">CBSE</a></li>
+                    <li><a href="#">WBCHSE</a></li>
+                    <li><a href="#">WBBSE</a></li>
+                    <li><a href="#">Children's Books</a></li>
+                    <li><a href="#">Comics</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Discover Your Next Favorite Read</h2>
+                <p>Curated collection from award-winning authors worldwide</p>
+                <a href="#" class="btn btn-primary">Explore Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="featured-categories">
+        <div class="container">
+            <h2 class="section-title">Shop By Category</h2>
+            <div class="categories-grid">
+                <a href="#" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Fiction">
+                    <h3>ICSE</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Non-Fiction">
+                    <h3>CBSE</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Academic">
+                    <h3>WBCHSE</h3>
+                </a>
+                <a href="#" class="category-card">
+                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Children's Books">
+                    <h3>Children's</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bestsellers Section -->
+    <section class="bestsellers-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Bestselling Books</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="books-grid" id="bestsellersGrid">
+                <!-- Books will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- New Releases Section -->
+    <section class="new-releases-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">New Releases</h2>
+                <a href="#" class="view-all">View All</a>
+            </div>
+            <div class="books-grid" id="newReleasesGrid">
+                <!-- Books will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offer Banner -->
+    <section class="special-offer">
+        <div class="container">
+            <div class="offer-content">
+                <h2>Summer Reading Sale</h2>
+                <p>Get 30% off on selected titles. Use code <strong>SUMMERREAD</strong> at checkout</p>
+                <a href="#" class="btn btn-outline">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The best online bookstore I've used. Fast delivery and excellent packaging."</p>
+                    <div class="customer">
+                        <strong>Rahul Sharma</strong>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Amazing collection and great customer service. Highly recommended!"</p>
+                    <div class="customer">
+                        <strong>Priya Patel</strong>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p>"Love their curated recommendations. Found many gems through their suggestions."</p>
+                    <div class="customer">
+                        <strong>Arjun Mehta</strong>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Join Our Newsletter</h2>
+                <p>Subscribe to get exclusive offers, book recommendations, and more</p>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sandhya Pustakalaya</h3>
+                    <p>Your premier destination for quality books since 2015. We're passionate about connecting readers with their next favorite book.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Order Tracking</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Refunds</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Dharma, Near Narayan Vidyabhaban Boy's School</li>
+                        <li><i class="fas fa-phone"></i> +91 7602677933</li>
+                        <li><i class="fas fa-envelope"></i> sandhyabook138@gmail.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 9PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sandhya Pustakalaya. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <img src="https://via.placeholder.com/40x25" alt="Visa">
+                    <img src="https://via.placeholder.com/40x25" alt="Mastercard">
+                    <img src="https://via.placeholder.com/40x25" alt="PayPal">
+                    <img src="https://via.placeholder.com/40x25" alt="UPI">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Shopping Cart</h3>
+            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal:</span>
+                <span class="total-amount">₹0.00</span>
+            </div>
+            <a href="#" class="btn btn-primary checkout-btn">Proceed to Checkout</a>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

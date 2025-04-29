@@ -1,0 +1,51 @@
+<!-- templates/my_orders.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Orders</title>
+    <link rel="stylesheet" href="{% static 'css/my_orders.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>📋 My Orders</h2>
+
+        {% if orders %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Ordered At</th>
+                    <th>Invoice</th> <!-- header fix -->
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    <tr>
+                        <td>{{ order.product.title }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>
+                            <span class="badge {{ order.status|lower }}">
+                                {{ order.status }}
+                            </span>
+                        </td>
+                        <td>{{ order.ordered_at|date:"d M Y, h:i A" }}</td>
+                        <td>
+                            <a href="{% url 'download_invoice' order.id %}" class="btn-download">Download Invoice</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        {% else %}
+            <p>No orders yet! 🛒</p>
+        {% endif %}
+
+        <a href="{% url 'home' %}">← Back to Shopping</a>
+    </div>
+</body>
+</html>

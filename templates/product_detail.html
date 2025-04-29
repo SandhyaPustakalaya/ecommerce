@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ product.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="product-detail">
+            <img src="{{ product.image.url }}" alt="{{ product.title }}">
+            <div class="info">
+                <h2>{{ product.title }}</h2>
+                <p class="category">Category: {{ product.category }}</p>
+                <p class="price">Price: ₹{{ product.price }}</p>
+                <p class="description">This is a great product! (You can add real description here.)</p>
+
+                <form action="{% url 'add_to_cart' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Add to Cart</button>
+                </form>
+
+                <a href="{% url 'home' %}">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

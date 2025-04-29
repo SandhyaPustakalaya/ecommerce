@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register - Sandhya Pustakalaya</title>
+  <link rel="stylesheet" href="{% static 'css/register.css' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="auth-container">
+    <form method="POST" action="{% url 'register' %}">
+      {% csrf_token %}
+      <h2>Create Your Account</h2>
+
+      {% if messages %}
+        {% for message in messages %}
+          <p class="message {{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+      {% endif %}
+
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" name="username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password1">Password</label>
+        <input type="password" name="password1" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password2">Confirm Password</label>
+        <input type="password" name="password2" required>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+      <p class="link">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </form>
+  </div>
+</body>
+</html>

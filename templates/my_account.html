@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Account - Sandhya Pustakalaya</title>
+    <link rel="stylesheet" href="{% static 'css/my_account.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>👤 My Account</h1>
+        
+        <section class="profile">
+            <h2>Profile Info</h2>
+            <p><strong>Username:</strong> {{ user.username }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <a href="{% url 'password_change' %}">🔐 Change Password</a>
+        </section>
+
+        <hr>
+
+        <section class="orders">
+            <h2>📦 My Orders</h2>
+            {% if orders %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Qty</th>
+                        <th>Status</th>
+                        <th>Ordered At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for order in orders %}
+                    <tr>
+                        <td>{{ order.product.title }}</td>
+                        <td>{{ order.quantity }}</td>
+                        <td>{{ order.status }}</td>
+                        <td>{{ order.ordered_at|date:"d M Y, h:i A" }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <p>No orders found.</p>
+            {% endif %}
+        </section>
+        
+        <a href="{% url 'home' %}">← Back to Home</a>
+    </div>
+</body>
+</html>
