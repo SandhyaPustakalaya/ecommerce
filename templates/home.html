@@ -6,10 +6,9 @@
     <title>Sandhya Pustakalaya</title>
     {% load static %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <img src="{% static 'images/logo.png' %}" alt="Logo">
     <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <!-- Top Announcement Bar -->
@@ -25,6 +24,7 @@
             <div class="header-top">
                 <div class="logo">
                     <a href="index.html">
+                        <img src="{% static 'images/logo.png' %}" alt="Logo" style="height: 50px;">
                         <h1>Sandhya<span>Pustakalaya</span></h1>
                         <p>Est. 2015</p>
                     </a>
@@ -217,65 +217,22 @@
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Shop</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><a href="#">Blog</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h3>Customer Service</h3>
-                    <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Order Tracking</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                        <li><a href="#">Shipping Policy</a></li>
-                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Contact Us</h3>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-map-marker-alt"></i> Dharma, Near Narayan Vidyabhaban Boy's School</li>
-                        <li><i class="fas fa-phone"></i> +91 7602677933</li>
-                        <li><i class="fas fa-envelope"></i> sandhyabook138@gmail.com</li>
-                        <li><i class="fas fa-clock"></i> Mon-Sat: 10AM - 9PM</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Sandhya Pustakalaya. All Rights Reserved.</p>
-                <div class="payment-methods">
-                    <img src="https://via.placeholder.com/40x25" alt="Visa">
-                    <img src="https://via.placeholder.com/40x25" alt="Mastercard">
-                    <img src="https://via.placeholder.com/40x25" alt="PayPal">
-                    <img src="https://via.placeholder.com/40x25" alt="UPI">
+                    <p>Email: support@sandhyapustakalaya.com</p>
+                    <p>Phone: +91 123 456 7890</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Shopping Cart Sidebar -->
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Your Shopping Cart</h3>
-            <button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="cart-items" id="cartItems">
-            <p class="empty-cart">Your cart is empty</p>
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Subtotal:</span>
-                <span class="total-amount">₹0.00</span>
-            </div>
-            <a href="#" class="btn btn-primary checkout-btn">Proceed to Checkout</a>
-        </div>
-    </div>
-    <div class="cart-overlay" id="cartOverlay"></div>
-
-<script src="{% static 'js/script.js' %}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
 </body>
 </html>

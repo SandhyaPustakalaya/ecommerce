@@ -17,7 +17,7 @@ SECURE_HSTS_PRELOAD = True
 SECRET_KEY = '8r67_n7p4Ta72vBUqFwjaVY9xX_6qlZwY14umIpWa7BumU-ZkvmQXpZDs7NRxwQSMBI'  # isse replace kar lena production me
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['sandhya-pustakalaya.onrender.com', 'sandhyapustakalaya.in', 'www.sandhyapustakalaya.in']
 
